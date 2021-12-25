@@ -1,0 +1,35 @@
+.feature {
+    width: 90%;
+    margin: 0 auto;
+
+    .hold {
+        padding: 4rem 0;
+        text-align: center;
+        display: grid;
+        grid-gap: 5rem;
+        grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    }
+
+    &Card {
+        @include flex($fd: column, $ai: center);
+    }
+    &Title {
+        margin-top: 1em;
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+    &Discribtion {
+        max-width: 42ch;
+        margin-top: 0.5em;
+        opacity: 0.75;
+    }
+
+    //
+    // Media
+    //
+    @include medium() {
+        .hold {
+            grid-template: repeat(4, 1fr) / 1fr;
+        }
+    }
+}

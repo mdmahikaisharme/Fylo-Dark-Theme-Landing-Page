@@ -1,0 +1,16 @@
+@import "./variable";
+@import "./reset";
+@import "./mixin";
+
+.hold {
+    width: 90%;
+    margin: 0 auto;
+}
+
+@import "./head";
+@import "./intro";
+@import "./feature";
+@import "./team";
+@import "./testimon";
+@import "./access";
+@import "./foot";

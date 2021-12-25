@@ -1,0 +1,70 @@
+.intro {
+    background-color: $intro;
+    background-image: url("../images/bg-curvy-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+
+    .hold {
+        padding: 4rem 0 4rem 0;
+        @include flex($fd: column, $ai: center);
+    }
+    &Img {
+        width: 100%;
+        max-width: 900px;
+    }
+    &Txt {
+        margin: 2rem 0;
+        text-align: center;
+        @include flex($fd: column, $ai: center);
+    }
+    &Title {
+        max-width: 30ch;
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
+    &Discribtion {
+        margin-top: 2em;
+        max-width: 52.5ch;
+        font-size: 1.15rem;
+        opacity: 0.75;
+    }
+    &Btn {
+        margin-top: 2em;
+        padding: 1rem 6rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        background-color: $blue;
+        border: none;
+        border-radius: 3rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $cyan;
+        }
+    }
+
+    //
+    // Media
+    //
+    @include medium() {
+        &Img {
+            max-width: 600px;
+        }
+    }
+    @include mobile() {
+        &Txt {
+            margin: 2rem 0;
+            text-align: center;
+            @include flex($fd: column, $ai: center);
+        }
+        &Title {
+            font-size: 1.8rem;
+        }
+        &Discribtion {
+            font-size: 1rem;
+        }
+        &Btn {
+            font-size: 1rem;
+        }
+    }
+}

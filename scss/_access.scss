@@ -1,0 +1,91 @@
+.access {
+    width: 70%;
+    margin: 0 auto;
+    background-color: $main;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(#000, 0.4);
+    transform: translateY(8rem);
+
+    .hold {
+        padding: 3rem;
+        text-align: center;
+        @include flex($fd: column, $ai: center);
+    }
+    &Title {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    &Discribtion {
+        margin: 1rem 0;
+        opacity: 0.75;
+    }
+
+    .form {
+        width: 100%;
+        margin-top: 1rem;
+        @include flex();
+
+        &Field {
+            width: 100%;
+            position: relative;
+        }
+        &Input {
+            width: 100%;
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 2rem;
+        }
+        &HelpX {
+            font-size: 0.75rem;
+            position: absolute;
+            top: calc(100% + 0.25rem);
+            left: 2rem;
+            color: $lightRed;
+        }
+        &Btn {
+            margin-left: 2rem;
+            padding: 0.9rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            flex: none;
+            background-color: $blue;
+            border: none;
+            border-radius: 2rem;
+
+            &:hover {
+                background-color: $cyan;
+            }
+        }
+    }
+
+    //
+    // Media
+    //
+    @include medium() {
+        .form {
+            flex-direction: column;
+
+            &Btn {
+                margin: 0;
+                margin-top: 2rem;
+            }
+        }
+    }
+    @include mobile() {
+        width: 90%;
+        &Title {
+            font-size: 1.5rem;
+        }
+        &Discribtion {
+            font-size: 0.9rem;
+        }
+        .form {
+            &HelpX {
+                font-size: 0.7rem;
+            }
+            &Btn {
+                font-size: 1rem;
+            }
+        }
+    }
+}

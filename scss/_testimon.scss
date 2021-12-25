@@ -1,0 +1,50 @@
+.testimon {
+    .hold {
+        padding: 4rem 0;
+        display: grid;
+        grid-gap: 3rem;
+        grid-template: 1fr / repeat(3, 1fr);
+    }
+
+    &Card {
+        padding: 2rem;
+        background-color: $testimonials;
+        border-radius: 4px;
+        box-shadow: 7.5px 7.5px 7.5px rgba(#686868, 0.05);
+    }
+    &Says {
+        max-width: 42ch;
+        margin-top: 1rem;
+        opacity: 0.75;
+    }
+    &User {
+        margin-top: 1.5rem;
+        @include flex($ai: center);
+    }
+    &Img {
+        width: 2rem;
+        height: 2rem;
+        object-fit: contain;
+        border-radius: 2rem;
+    }
+    &Info {
+        margin-left: 0.75rem;
+    }
+    &Name {
+        font-size: 0.8rem;
+    }
+    &Discribtion {
+        font-size: 0.7rem;
+        opacity: 0.5;
+    }
+
+    //
+    // Media
+    //
+    @include medium() {
+        .hold {
+            grid-template: repeat(3, 1fr) / 1fr;
+            place-items: center;
+        }
+    }
+}

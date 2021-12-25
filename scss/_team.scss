@@ -1,0 +1,67 @@
+.team {
+    .hold {
+        padding: 4rem 0;
+        @include flex($ai: center, $jc: space-between);
+    }
+
+    &Img {
+        width: 50%;
+    }
+    &Txt {
+        width: 45%;
+        @include flex($fd: column);
+    }
+    &Title {
+        margin-top: 1em;
+        max-width: 20ch;
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
+    &Discribtion {
+        max-width: 57ch;
+        margin-top: 1em;
+        opacity: 0.75;
+    }
+    &Btn {
+        width: fit-content;
+        margin-top: 1em;
+        text-decoration: none;
+        padding: 0.3em 0;
+        @include flex($ai: center);
+        color: $blue;
+        border-bottom: 1px solid $blue;
+        transition: color 0.2s ease, border-bottom-color 0.2s ease;
+
+        img {
+            margin-left: 0.4em;
+        }
+
+        &:hover {
+            color: $white;
+            border-bottom-color: $white;
+        }
+    }
+
+    //
+    // Media
+    //
+    @include medium() {
+        .hold {
+            flex-direction: column;
+        }
+
+        &Img {
+            width: 100%;
+            max-width: 600px;
+        }
+        &Txt {
+            width: 100%;
+        }
+    }
+    @include mobile() {
+        &Title {
+            max-width: fit-content;
+            font-size: 1.5rem;
+        }
+    }
+}

@@ -1,0 +1,120 @@
+.foot {
+    padding-top: 8rem;
+    font-size: 0.9rem;
+    background-color: $footer;
+    text-align: left;
+
+    .hold {
+        padding: 4rem;
+        padding-left: 3rem;
+    }
+
+    &Logo > img {
+        height: 2rem;
+        object-fit: contain;
+    }
+
+    &Bottom {
+        margin-top: 3rem;
+        display: grid;
+        grid-gap: 4rem;
+        grid-template: 1fr / 4fr 2.5fr repeat(2, 1fr) 1fr;
+    }
+    &Icon {
+        margin-right: 1.75rem;
+    }
+
+    //
+    //
+    //
+    &Location {
+        @include flex($ai: flex-start);
+    }
+
+    //
+    //
+    //
+    &Contact {
+        &Item {
+            @include flex($ai: flex-start);
+
+            &:first-child {
+                margin-bottom: 1.25rem;
+            }
+        }
+    }
+
+    //
+    //
+    //
+    &Link {
+        &s {
+            @include flex($fd: column);
+        }
+
+        margin-bottom: 1.5rem;
+        text-decoration: none;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            opacity: 1;
+            border-bottom-color: $white;
+        }
+    }
+
+    //
+    //
+    //
+    &Media {
+        &s {
+            @include flex($jc: flex-end);
+        }
+
+        width: 2rem;
+        height: 2rem;
+        margin-right: 1rem;
+        @include flex($ai: center, $jc: center);
+        border-radius: 50%;
+        border: 1px solid $white;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        & > img {
+            width: 0.8rem;
+            height: 0.8rem;
+            margin: 0;
+            filter: brightness(10);
+        }
+    }
+
+    //
+    // Media
+    //
+    @include desktop() {
+        &Bottom {
+            grid-template: repeat(3, auto) / repeat(2, 1fr);
+        }
+    }
+    @include medium() {
+        &Medias {
+            grid-column: span 2;
+            justify-content: center;
+        }
+    }
+    @include mobile() {
+        .hold {
+            padding-left: 0;
+        }
+        &Bottom {
+            grid-template: repeat(5, auto) / 1fr;
+        }
+        &Medias {
+            grid-column: span 1;
+        }
+    }
+}

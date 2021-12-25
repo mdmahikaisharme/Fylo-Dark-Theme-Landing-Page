@@ -1,0 +1,45 @@
+.head {
+    background-color: $intro;
+
+    .hold {
+        padding: 4rem 0;
+        @include flex($ai: center, $jc: space-between);
+    }
+    &Logo > img {
+        height: 3.25rem;
+        object-fit: contain;
+    }
+    &Nav {
+        list-style: none;
+        @include flex($ai: center);
+    }
+    &Link {
+        margin-left: 3rem;
+        text-decoration: none;
+        font-size: 1.1rem;
+        opacity: 0.5;
+        border: 1px solid transparent;
+
+        &:hover {
+            opacity: 1;
+            border-bottom-color: $white;
+        }
+    }
+
+    //
+    // Media
+    //
+    @include mobile() {
+        .hold {
+            padding: 2rem 0;
+        }
+        &Logo > img {
+            height: 2rem;
+        }
+
+        &Link {
+            margin-left: 1rem;
+            font-size: 0.9rem;
+        }
+    }
+}
